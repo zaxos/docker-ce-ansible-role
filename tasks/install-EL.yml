@@ -32,3 +32,4 @@
     name: docker-ce
     state: present
     update_cache: yes
+  notify: Start Docker CE service

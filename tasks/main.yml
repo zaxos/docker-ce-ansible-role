@@ -9,8 +9,7 @@
   include: install-Ubuntu.yml
   when: ansible_distribution == 'Ubuntu'
 
-- name: Start and enable Docker CE service
+- name: Enable Docker CE service on startup
   service:
     name: docker
     enabled: yes
-    state: started
