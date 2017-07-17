@@ -12,4 +12,5 @@
 - name: Enable Docker CE service on startup
   service:
     name: docker
+    state: started
     enabled: yes

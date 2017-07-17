@@ -7,7 +7,6 @@ docker_cleanup_packages_EL:
   - {package: "docker"}
   - {package: "docker-common"}
   - {package: "docker-client"}
-  - {package: "docker-selinux"}
   - {package: "docker-engine"}
 
 docker_cleanup_packages_Ubuntu:
