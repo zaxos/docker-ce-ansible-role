@@ -14,9 +14,6 @@ docker_cleanup_packages_Ubuntu:
   - {package: "docker-engine"}
   - {package: "containerd"}
 
-docker_prerequisite_packages_EL:
-  - {package: "python-docker"}
-
 docker_prerequisite_packages_Ubuntu:
   - {package: "apt-transport-https"}
   - {package: "ca-certificates"}

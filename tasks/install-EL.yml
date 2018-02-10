@@ -7,12 +7,6 @@
     state: absent
   with_items: "{{ docker_cleanup_packages_EL }}"
 
-- name: Install prerequisite packages
-  yum:
-    name: "{{ item.package }}"
-    state: present
-  with_items: "{{ docker_prerequisite_packages_EL }}"
-
 - name: Import Docker CE repository gpg key
   rpm_key:
     key: https://download.docker.com/linux/centos/gpg
