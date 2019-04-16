@@ -21,7 +21,7 @@
   yum:
     name: "{{ docker_prerequisite_packages_EL_RHEL }}"
     state: present
-  when: ansible_distribution == "RedHat" 
+  when: ansible_distribution == "RedHat"
 
 - name: Import Docker CE repository gpg key
   rpm_key:

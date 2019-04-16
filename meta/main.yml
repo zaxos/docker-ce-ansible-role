@@ -1,5 +1,5 @@
 galaxy_info:
-  author: zaxos 
+  author: zaxos
   description: Ansible role to install Docker CE (Community Edition)
 
   license: GPLv2
@@ -9,14 +9,14 @@ galaxy_info:
   platforms:
     - name: EL
       versions:
-      - 7
+        - 7
     - name: Ubuntu
       versions:
-      - xenial
-      - trusty
-      - yakkety
-      - bionic
+        - xenial
+        - trusty
+        - yakkety
+        - bionic
 
-  galaxy_tags: [docker,system,packaging]
+  galaxy_tags: [docker, system, packaging]
 
 dependencies: []
