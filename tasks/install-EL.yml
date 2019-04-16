@@ -3,9 +3,25 @@
 
 - name: Remove previous docker installation
   yum:
-    name: "{{ item.package }}"
+    name: "{{ docker_cleanup_packages_EL }}"
     state: absent
-  with_items: "{{ docker_cleanup_packages_EL }}"
+
+- name: Install prerequisite packages
+  yum:
+    name: "{{ docker_prerequisite_packages_EL }}"
+    state: present
+
+- name: Enable additional repository (for RHEL only)
+  rhsm_repository:
+    name: "rhel-7-server-extras-rpms"
+    state: present
+  when: ansible_distribution == "RedHat"
+
+- name: Install additional prerequisite packages (for RHEL only)
+  yum:
+    name: "{{ docker_prerequisite_packages_EL_RHEL }}"
+    state: present
+  when: ansible_distribution == "RedHat" 
 
 - name: Import Docker CE repository gpg key
   rpm_key:

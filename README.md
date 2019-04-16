@@ -10,10 +10,12 @@ Requirements
 ------------
 * OS support list:  
   * Centos 7
+  * Ubuntu Bionic 18.04 (LTS)
   * Ubuntu Xenial 16.04 (LTS)
   * Ubuntu Yakkety 16.10
   * Ubuntu Trusty 14.04 (LTS)
-* ansible >= 1.9
+  * RedHat Enterprise Linux 7 (Docker CE is officialy not supported for RHEL)
+* ansible >= 2.5
 
 Installation
 ------------

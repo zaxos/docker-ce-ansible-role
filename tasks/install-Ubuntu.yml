@@ -3,22 +3,19 @@
 
 - name: Remove previous docker installation
   apt:
-    name: "{{ item.package }}"
+    name: "{{ docker_cleanup_packages_Ubuntu }}"
     state: absent
-  with_items: "{{ docker_cleanup_packages_Ubuntu }}"
 
 - name: Install prerequisite packages
   apt:
-    name: "{{ item.package }}"
+    name: "{{ docker_prerequisite_packages_Ubuntu }}"
     state: present
-  with_items: "{{ docker_prerequisite_packages_Ubuntu }}"
 
 - name: Install prerequisite packages (for Ubuntu 14.04 only)
   apt:
-    name: "{{ item.package }}"
+    name: "{{ docker_prerequisite_packages_Ubuntu_1404 }}"
     state: present
-  with_items: "{{ docker_prerequisite_packages_Ubuntu_1404 }}"
-  when: ansible_distribution_version == '14.04'
+  when: ansible_distribution_version == "14.04"
 
 - name: Import Docker CE repository gpg key
   apt_key:
